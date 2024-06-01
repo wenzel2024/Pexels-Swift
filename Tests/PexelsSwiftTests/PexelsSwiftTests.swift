@@ -162,7 +162,7 @@ final class PexelsSwiftTests: XCTestCase {
 
         guard let pexels = pexels else { XCTFail("self.pexels == nil"); return }
         pexels.setup(apiKey: apiKey, logLevel: logLevel)
-        let result = await pexels.getCollections(count: 1)
+        let result = await pexels.getFeaturedCollections(count: 1)
 
         switch result {
         case .failure(let error):
@@ -353,7 +353,7 @@ final class PexelsSwiftTests: XCTestCase {
         let expectation = expectation(description: "closure")
         guard let pexels = pexels else { XCTFail("self.pexels == nil"); return }
         pexels.setup(apiKey: apiKey, logLevel: logLevel)
-        pexels.getCollections(count: 1) { result in
+        pexels.getFeaturedCollections(count: 1) { result in
             switch result {
             case .failure(let error):
                 XCTFail(error.description)

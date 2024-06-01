@@ -23,6 +23,13 @@ internal extension PexelsSwift {
                 .appendingPathComponent("featured")
                 .absoluteString
         }
+      
+        static var myCollections: String {
+            URL(string: basePath)!
+                .appendingPathComponent(version)
+                .appendingPathComponent("collections")
+                .absoluteString
+        }
 
         static func collections(_ id: String) -> String {
             URL(string: basePath)!
