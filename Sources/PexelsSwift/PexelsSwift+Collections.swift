@@ -26,7 +26,7 @@ public extension PexelsSwift {
   ) async -> CollectionResult {
     guard var components: URLComponents = .init(string: api)
     else {
-      return .failure(.badURL(API.featuredCollections))
+      return .failure(.badURL(api))
     }
     let param: [URLQueryItem] = [.init(name: P.page, value: page.string),
                                  .init(name: P.perPage, value: count.string)]
